@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-OmniBizApplication<omni-biz>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.dummy.omni_biz.OmniBizApplication",
+            "projectName": "omni-biz",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

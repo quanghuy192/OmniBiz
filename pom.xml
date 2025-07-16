@@ -205,6 +205,8 @@
 							<options>@generated=omit</options>
 						</binaryMavenPlugin>
 					</binaryMavenPlugins>
+					<!-- Add this section to specify where your .proto files are located -->
+					<protoSourceRoot>${project.basedir}/src/main/proto</protoSourceRoot>
 				</configuration>
 				<executions>
 					<execution>

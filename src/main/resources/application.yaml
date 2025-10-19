@@ -1,0 +1,10 @@
+spring:
+    application:
+        name: omni-biz
+
+    jwt:
+        private-key: classpath:auth-keys/private.pem
+        public-key: classpath:auth-keys/public-key.pem
+        expiration: 3600000
+
+

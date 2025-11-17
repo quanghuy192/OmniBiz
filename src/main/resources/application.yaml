@@ -1,10 +1,24 @@
 spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/mydatabase
+        username: myuser
+        password: secret
     application:
         name: omni-biz
-
     jwt:
         private-key: classpath:auth-keys/private.pem
-        public-key: classpath:auth-keys/public-key.pem
+        public-key: classpath:auth-keys/public.pem
         expiration: 3600000
+    liquibase:
+        change-log: classpath:db/changelog/db.changelog-master.xml
+        enabled: true
+    flyway:
+        enabled: false
+
+springdoc:
+    swagger-ui:
+        path: /docs
+    api-docs:
+        path: /api-docs
 
 

@@ -11,18 +11,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dummy.omni_biz.authentication.entity.AuthRequest;
 import com.dummy.omni_biz.authentication.service.JwtService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/authenticate")
 @RequiredArgsConstructor
+@Tag(name = "Authentication", description = "Authentication management operations")
 public class AuthenticationController {
 
     private AuthenticationManager authenticationManager;
     private JwtService jwtService;
 
-    @PostMapping("/authenticate")
+    @PostMapping()
+    @Operation(summary = "authenticate all users", description = "authenticate all registered users")
     public ResponseEntity<String> authenticate(@RequestBody AuthRequest request) {
         final Authentication authentication = this.authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
